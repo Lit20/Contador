@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>EVENTO FINAL DE FORTNITE TEMPORADA 5 CAP 3</h1>
+    <div class="container">
+        <div class="countdown">
+            <div class="time">
+                <div class="value" id="days"></div>
+                <div class="label">Días</div>
+            </div>
+            <div class="time">
+                <div class="value" id="hours"></div>
+                <div class="label">Horas</div>
+            </div>
+            <div class="time">
+                <div class="value" id="minutes"></div>
+                <div class="label">Minutos</div>
+            </div>
+            <div class="time">
+                <div class="value" id="seconds"></div>
+                <div class="label">Segundos</div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const countdown = document.querySelector('.countdown');
+        const deadline = Date.parse('2024-05-24T15:00:00');
+
+        const timeInterval = setInterval(() => {
+            const now = new Date();
+            const diff = deadline - now;
+
+            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            const daysElement = document.getElementById('days');
+            const hoursElement = document.getElementById('hours');
+            const minutesElement = document.getElementById('minutes');
+            const secondsElement = document.getElementById('seconds');
+
+            daysElement.textContent = days < 10 ? `0${days}` : days;
+            hoursElement.textContent = hours < 10 ? `0${hours}` : hours;
+            minutesElement.textContent = minutes < 10 ? `0${minutes}` : minutes;
+            secondsElement.textContent = seconds < 10 ? `0${seconds}` : seconds;
+
+            if (diff <= 0) {
+                clearInterval(timeInterval);
+            }
+        }, 1000);
+    </script>
+    <P>Derechos reservados porque papi LIT hizo este contador sube el pase o GG top 2</P>
+</body>
+</html>
+
